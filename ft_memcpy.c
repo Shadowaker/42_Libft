@@ -6,11 +6,12 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:10:45 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/10 16:33:44 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/11 15:32:09 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+/*#include <libft.h>*/
+#include <stdlib.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -19,9 +20,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	if (!dst)
 		return (NULL);
-	while (i < n && src[i] != '\0')
+	while (i < n && ((char *) src)[i] != '\0')
 	{
-		dst[i] = src[i];
+		((char *) dst)[i] = ((char *)src)[i];
 		i++;
 	}
 	return (dst);

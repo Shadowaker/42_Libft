@@ -6,13 +6,13 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 13:56:29 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/10 14:49:00 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/11 17:59:35 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ftlib.h>
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int		x;
 

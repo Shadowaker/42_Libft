@@ -1,42 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 11:50:46 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/11 11:50:50 by dridolfo         ###   ########.fr       */
+/*   Created: 2022/01/11 14:02:00 by dridolfo          #+#    #+#             */
+/*   Updated: 2022/01/11 14:13:43 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int	ft_atoi(const char *str)
-{
-	int		i;
-	int		r;
-	int		s;
+/*
+** Allocates (with malloc(3)) and returns a new
+** string, which is the result of the concatenation
+** of ’s1’ and ’s2’.
+*/
 
-	i = 0;
-	r = 0;
-	s = 1;
-	while (str[i] != '\0' && (str[i] < 48 || 57 < str[i])
-		&& (str[i] != '+' && str[i] != '-'))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			s *= -1;
-		i++;
-	}
-	if (str[i] < 48 || str[i] > 57 || str[i] == '\0')
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char			*str;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
+
+	j = ft_strlen(s1);
+	k = ft_strlen(s2);
+	str = malloc(j + k + 1);
+	if (!str)
 		return (NULL);
-	while (str[i] != off)
+	i = 0;
+	while (i < j)
 	{
-		r *= 10;
-		r += (str[i] - 48);
+		str[i] = s1[i];
 		i++;
 	}
-	return (r);
+	j = 0;
+	while (j < k)
+	{
+		str[i] = s1[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
 }
