@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:14:24 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/11 16:34:47 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/12 16:05:16 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,6 @@ static unsigned int	ft_con(char c, char const *set)
 		j++;
 	}
 	return (0);
-}
-
-unsigned int	ft_strlen(const char *str)
-{
-	int		x;
-
-	while (str[x] != '\0')
-		x++;
-	return (x);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

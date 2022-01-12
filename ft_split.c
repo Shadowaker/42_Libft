@@ -6,15 +6,13 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:04:05 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/11 19:44:07 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/12 21:48:56 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <libft.h>
-#include <stdlib.h>
-#include "ft_substr.c"
+#include <libft.h>
 
-unsigned int	ft_counter(char const *s, char c)
+static unsigned int	ft_counter(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	con;
@@ -27,35 +25,29 @@ unsigned int	ft_counter(char const *s, char c)
 			con++;
 		i++;
 	}
-	return (con + 1);
+	return (con);
 }
 
-unsigned int	ft_goback(char const *s, char c, unsigned int l)
+static unsigned int	ft_goback(char const *s, char c, unsigned int l)
 {
-	while (s[l] != c && l != 0)
+	while (s[l] != c && l > 0)
 		l--;
-	if (l == 0)
+	if (l == 0 && s[l] != c)
 		return (l);
 	return (l + 1);
 }
 
-char	**ft_split(char const *s, char c)
+static void	ft_looper(char const *s, char **str, char c)
 {
 	unsigned int	i;
 	unsigned int	j;
 	unsigned int	k;
-	unsigned int	con;
-	char			**str;
 
-	con = ft_counter(s, c);
-	str = malloc((sizeof(char *) * con) + 1);
-	if (!str)
-		return (NULL);
 	i = 0;
 	k = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == c && i > 0)
 		{
 			j = ft_goback(s, c, i - 1);
 			str[k] = ft_substr(s, j, i - 1);
@@ -70,24 +62,23 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	str[k] = 0;
-	return (str);
 }
 
-int	main(int argc, char **argv)
+char	**ft_split(char const *s, char c)
 {
-	int		i;
-	char	**result;
-	char	*in;
-	char	cc;
+	unsigned int	it;
+	unsigned int	con;
+	char			**str;
 
-	in = "  ";
-	cc = ' ';
-	result = ft_split(in, cc);
-	printf("=+=+=+=+=+=+= RESULT =+=+=+=+=+=+=\n");
-	while (result[i] != '\0')
+	con = ft_counter(s, c);
+	str = malloc((sizeof(char *) * (con + 1)) + 1);
+	if (!str)
+		return (NULL);
+	if (ft_strlen(s) == con)
 	{
-		printf("%i: $%s$\n", i, result[i]);
-		i++;
+		str[0] = 0;
+		return (str);
 	}
-	return (0);
+	ft_looper(s, str, c);
+	return (str);
 }
