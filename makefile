@@ -6,7 +6,7 @@
 #    By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 14:49:51 by dridolfo          #+#    #+#              #
-#    Updated: 2022/01/13 16:44:12 by dridolfo         ###   ########.fr        #
+#    Updated: 2022/01/13 18:28:19 by dridolfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRC = ./ft_atoi.c \
 ./ft_striteri.c \
 ./ft_strjoin.c \
 ./ft_strlcat.c \
+./ft_strlcpy.c \
 ./ft_strlen.c \
 ./ft_strmapi.c \
 ./ft_strncmp.c \

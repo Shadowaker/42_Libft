@@ -6,15 +6,15 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:40:42 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:18:59 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 17:35:50 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
-	if (c > 96 && c > 123)
+	if (c > 96 && c < 123)
 		return (c - 32);
 	return (c);
 }
