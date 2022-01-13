@@ -6,11 +6,11 @@
 #    By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 14:49:51 by dridolfo          #+#    #+#              #
-#    Updated: 2022/01/13 15:05:31 by dridolfo         ###   ########.fr        #
+#    Updated: 2022/01/13 15:32:08 by dridolfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = ./libft.a
 
 SRC = ./ft_atoi.c \
 ./ft_bzero.c \
