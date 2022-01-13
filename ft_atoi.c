@@ -6,11 +6,11 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:50:46 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 13:26:58 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:15:37 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

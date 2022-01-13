@@ -6,11 +6,11 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 18:09:14 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 15:17:36 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:17:58 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

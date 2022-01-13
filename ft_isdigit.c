@@ -6,11 +6,11 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 12:27:19 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/10 14:48:47 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:16:11 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ftlib.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

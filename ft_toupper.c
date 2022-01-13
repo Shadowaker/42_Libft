@@ -6,11 +6,11 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:40:42 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/10 14:48:20 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:18:59 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ftlib.h>
+#include "libft.h"
 
 int	toupper(int c)
 {

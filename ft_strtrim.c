@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:14:24 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/12 16:05:16 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:18:38 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 ** from the beginning and the end of the string.
 */
 
-#include <libft.h>
+#include "libft.h"
 
 static unsigned int	ft_con(char c, char const *set)
 {

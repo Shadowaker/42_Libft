@@ -6,12 +6,11 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:10:45 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/11 15:32:09 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:16:50 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <libft.h>*/
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

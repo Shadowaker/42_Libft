@@ -6,11 +6,11 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:04:05 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/12 21:48:56 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:17:28 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 static unsigned int	ft_counter(char const *s, char c)
 {

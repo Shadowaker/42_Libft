@@ -6,11 +6,11 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 17:46:19 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 15:21:32 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:18:22 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 static int	ft_strcmp(char *a, char *b, size_t pos)
 {
