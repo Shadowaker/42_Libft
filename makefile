@@ -6,7 +6,7 @@
 #    By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 14:49:51 by dridolfo          #+#    #+#              #
-#    Updated: 2022/01/13 15:32:08 by dridolfo         ###   ########.fr        #
+#    Updated: 2022/01/13 16:44:12 by dridolfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ RM = rm -f
 
 CC = gcc -Wall -Wextra -Werror
 
-.c.o = ${CC} -I {HDRS} includes -c $< -o ${<:.c=.0}
+.c.o = ${CC} -I {HDRS} includes -c $< -o ${<:.c=.o}
 
 $(NAME): ${OBJS}
 	ar rc $(NAME) $(OBJS)
@@ -65,9 +65,9 @@ $(NAME): ${OBJS}
 all: $(NAME)
 
 clean:
-	{RM} $(OBJS)
+	${RM} $(OBJS)
 
 fclean: clean
-	{RM} $(NAME)
+	${RM} $(NAME)
 
 re: fclean all

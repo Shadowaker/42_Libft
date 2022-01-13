@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 20:54:23 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:20:00 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:34:27 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,4 @@ void	ft_memmove(void *dst, const void *src, size_t len)
 	s = (char *) src;
 	while (len--)
 		*d++ = *s++;
-	return (dest);
 }

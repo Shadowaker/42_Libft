@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 21:14:33 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:17:41 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:37:54 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i] != '\0')
 	{
-		f(i, s[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 13:36:44 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:18:51 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:43:18 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*sub;
 	unsigned int	i;
 	unsigned int	j;
-	unsigned int	buffer;
 
 	i = 0;
 	j = (unsigned int) len;

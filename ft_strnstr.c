@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 17:46:19 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:18:22 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:43:02 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	if (!needle)
-		return (haystack);
+		return ((char *) haystack);
 	while (haystack[i] != '\0' && i < len)
 	{
 		if (haystack[i] == needle[0])
 		{
-			b = ft_strcmp(haystack, needle, i);
+			b = ft_strcmp((char *) haystack, (char *) needle, i);
 			if (b == 1)
-				return (&haystack[i]);
+				return ((char *) &haystack[i]);
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

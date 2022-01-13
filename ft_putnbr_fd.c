@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 13:43:31 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:17:14 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:36:42 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
+	char	*c;
 
 	c = ft_itoa(n);
 	if (fd != -1)
 	{
-		write(fd, &c, 1);
+		ft_putstr_fd(c, fd);
 	}
 }

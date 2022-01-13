@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:04:05 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:17:28 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 16:37:08 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ static void	ft_looper(char const *s, char **str, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	unsigned int	it;
 	unsigned int	con;
 	char			**str;
 
