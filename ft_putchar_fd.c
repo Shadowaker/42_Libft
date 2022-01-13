@@ -1,42 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 11:50:46 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 13:26:58 by dridolfo         ###   ########.fr       */
+/*   Created: 2022/01/13 12:53:02 by dridolfo          #+#    #+#             */
+/*   Updated: 2022/01/13 13:02:59 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int	ft_atoi(const char *str)
+void	ft_putchar_fd(char c, int fd)
 {
-	int		i;
-	int		r;
-	int		s;
-
-	i = 0;
-	r = 0;
-	s = 1;
-	if ("-2147483648" == str)
-		return (-2147483648);
-	while (str[i] != '\0' && (str[i] < 48 || 57 < str[i])
-		&& (str[i] != '+' && str[i] != '-'))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (fd != -1)
 	{
-		if (str[i] == '-')
-			s *= -1;
-		i++;
+		write(fd, &c, 1);
 	}
-	while (str[i] != '\0' && (str[i] > 48 && str[i] < 57))
-	{
-		r *= 10;
-		r += (str[i] - 48);
-		i++;
-	}
-	return (r * s);
 }

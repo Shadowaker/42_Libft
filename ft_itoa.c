@@ -6,14 +6,11 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 16:00:38 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/12 19:27:44 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/13 13:45:21 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <libft.h>
-#include "ft_strlen.c"
-#include <stdlib.h>
-#include <unistd.h>
+#include <libft.h>
 
 static unsigned int	ft_len_num(long int n)
 {
@@ -62,9 +59,4 @@ char	*ft_itoa(int n)
 		i--;
 	}
 	return (str);
-}
-
-int	main(int argc, char **argv)
-{
-	printf("%s\n", ft_itoa(atoi(argv[1])));
 }
