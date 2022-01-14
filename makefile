@@ -6,7 +6,7 @@
 #    By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 14:49:51 by dridolfo          #+#    #+#              #
-#    Updated: 2022/01/13 18:28:19 by dridolfo         ###   ########.fr        #
+#    Updated: 2022/01/14 22:05:59 by dridolfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,8 @@ SRC = ./ft_atoi.c \
 ./ft_substr.c \
 ./ft_tolower.c \
 ./ft_toupper.c \
+
+bonus =
 
 
 OBJS = $(SRC:.c=.o)
