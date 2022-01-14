@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:14:24 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:18:38 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/14 20:19:31 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char			*str;
 
 	i = 0;
-	while (s1[i] != '\0' && (ft_con(s1[i], set) == 1))
-		i++;
-	k = ft_strlen(s1) - 1;
-	while ((ft_con(s1[k], set) == 1) && k > i)
-		k--;
-	con = k - i;
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	if (s1[i] != '\0')
+	{
+		while (s1[i] != '\0' && (ft_con(s1[i], set) == 1))
+			i++;
+		k = ((unsigned int) ft_strlen(s1)) - 1;
+		while ((ft_con(s1[k], set) == 1) && k > i)
+			k--;
+		con = (k - i) + 1;
+	}
+	else
+		con = 1;
 	str = ft_substr(s1, i, con);
 	if (!str)
 		return (NULL);

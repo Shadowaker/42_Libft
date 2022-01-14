@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 20:59:32 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:18:14 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/14 20:21:52 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*s1;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	s1 = (char *) malloc(ft_strlen(s) + 1);
 	if (!s1)
 		return (NULL);

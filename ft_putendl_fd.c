@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 13:12:47 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:17:10 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/14 20:23:43 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putendl_fd(char *s, int fd)
 	unsigned int	i;
 
 	i = 0;
+	if (s == NULL)
+		return ;
 	if (fd != -1)
 	{
 		while (s[i] != '\0')

@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 15:04:05 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 16:37:08 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/14 20:21:10 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,16 @@ static unsigned int	ft_counter(char const *s, char c)
 	con = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
-			con++;
-		i++;
+		while (s[i] == c)
+			i++;
+		con++;
+		while (s[i] != c && s[i] != '\0')
+			i++;
 	}
 	return (con);
 }
 
-static unsigned int	ft_goback(char const *s, char c, unsigned int l)
-{
-	while (s[l] != c && l > 0)
-		l--;
-	if (l == 0 && s[l] != c)
-		return (l);
-	return (l + 1);
-}
-
-static void	ft_looper(char const *s, char **str, char c)
+static void	ft_looper(char const *s, char **str, char c, unsigned int con)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -47,17 +40,14 @@ static void	ft_looper(char const *s, char **str, char c)
 	k = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c && i > 0)
+		while (s[i] == c)
+			i++;
+		j = i;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		if (k < con - 1 || con == 1)
 		{
-			j = ft_goback(s, c, i - 1);
-			str[k] = ft_substr(s, j, i - 1);
-			k++;
-		}
-		i++;
-		if (s[i] == '\0' && s[i - 1] != c)
-		{
-			j = ft_goback(s, c, i - 1);
-			str[k] = ft_substr(s, j, i - 1);
+			str[k] = ft_substr(s, j, (size_t) i - j);
 			k++;
 		}
 	}
@@ -69,15 +59,12 @@ char	**ft_split(char const *s, char c)
 	unsigned int	con;
 	char			**str;
 
+	if (s == NULL)
+		return (NULL);
 	con = ft_counter(s, c);
-	str = malloc((sizeof(char *) * (con + 1)) + 1);
+	str = malloc((sizeof(char *) * (con)) + 1);
 	if (!str)
 		return (NULL);
-	if (ft_strlen(s) == con)
-	{
-		str[0] = 0;
-		return (str);
-	}
-	ft_looper(s, str, c);
+	ft_looper(s, str, c, con);
 	return (str);
 }
