@@ -6,7 +6,7 @@
 #    By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 14:49:51 by dridolfo          #+#    #+#              #
-#    Updated: 2022/01/15 16:51:58 by dridolfo         ###   ########.fr        #
+#    Updated: 2022/01/15 17:24:13 by dridolfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,8 +74,8 @@ $(NAME): ${OBJS}
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-bonus:
-	ar rc $(BONUS) $(OBJB)
+bonus: ${OBJB}
+	ar rc $(NAME) $(OBJB)
 
 all: $(NAME)
 
@@ -83,7 +83,7 @@ clean:
 	${RM} $(OBJS)
 
 fclean: clean
-	${RM} $(NAME) *.o
+	${RM} $(NAME) ${OBJB}
 
 re: fclean all
 

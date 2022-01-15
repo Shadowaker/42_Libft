@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:03:39 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/15 17:03:50 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/15 21:24:18 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst->next != NULL)
+	while (lst)
 	{
 		f(lst->content);
 		lst = lst->next;

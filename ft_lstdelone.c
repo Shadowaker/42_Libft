@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 16:36:43 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/15 16:36:49 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/15 20:05:37 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst);
-	free(lst->content);
+	del(lst->content);
+	free(lst);
 }

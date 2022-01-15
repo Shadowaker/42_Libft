@@ -6,30 +6,48 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:03:24 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/15 17:03:48 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/15 22:35:02 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+static t_list	*ft_looper(t_list *lst, void *(*f)(void *), void (*del)(void *),
+							t_list *new_n)
 {
-	t_list	*new_l;
-	t_list	*new_n;
-	t_list	*tmp;
-	int		size;
+	t_list	*ptr;
 
-	size = ft_lstsize(lst);
-	new_l = (t_list *) malloc(sizeof(t_list) * size);
-	if (!new_l)
-		return (NULL);
-	while (lst->next != NULL)
+	ptr = new_n;
+	while (!lst)
 	{
 		new_n = ft_lstnew(f(lst->content));
-		ft_lstadd_back(&new_l, new_n);
-		tmp = lst;
-		ft_delone(lst);
-		lst = tmp->next;
+		if (!new_n)
+		{
+			ft_lstclear(&lst, del);
+			ft_lstclear(&ptr, del);
+			return (NULL);
+		}
+		lst = lst->next;
+		ft_lstadd_back(&ptr, new_n);
 	}
-	return (new_l);
+	return (ptr);
+}
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new_n;
+	t_list	*ptr;
+	t_list	*tmp;
+
+	if (!f || !lst)
+		return (NULL);
+	new_n = ft_lstnew(f(lst->content));
+	if (!new_n)
+	{
+		ft_lstclear(&lst, del);
+		return (NULL);
+	}
+	lst = lst->next;
+	ptr = ft_looper(lst, f, del, new_n);
+	return (ptr);
 }

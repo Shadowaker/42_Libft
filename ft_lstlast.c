@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 16:41:53 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/15 16:41:59 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/15 18:44:37 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst->next != NULL)
-	{
+	while (lst && lst->next != NULL)
 		lst = lst->next;
-	}
 	return (lst);
 }
