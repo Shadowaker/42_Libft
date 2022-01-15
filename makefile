@@ -6,7 +6,7 @@
 #    By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 14:49:51 by dridolfo          #+#    #+#              #
-#    Updated: 2022/01/14 22:05:59 by dridolfo         ###   ########.fr        #
+#    Updated: 2022/01/15 16:51:58 by dridolfo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,10 +47,20 @@ SRC = ./ft_atoi.c \
 ./ft_tolower.c \
 ./ft_toupper.c \
 
-bonus =
+BONUS = ./ft_lstadd_back.c \
+./ft_lstadd_front.c \
+./ft_lstclear.c \
+./ft_lstdelone.c \
+./ft_lstiter.c \
+./ft_lstlast.c \
+./ft_lstmap.c \
+./ft_lstnew.c \
+./ft_lstsize.c
 
 
 OBJS = $(SRC:.c=.o)
+
+OBJB = $(BONUS:.c=.o)
 
 HDRS = libft.h
 
@@ -58,12 +68,14 @@ RM = rm -f
 
 CC = gcc -Wall -Wextra -Werror
 
-.c.o = ${CC} -I {HDRS} includes -c $< -o ${<:.c=.o}
+.c.o = ${CC} -I ${HDRS} includes -c $< -o ${<:.c=.o}
 
 $(NAME): ${OBJS}
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
+bonus:
+	ar rc $(BONUS) $(OBJB)
 
 all: $(NAME)
 
@@ -71,6 +83,8 @@ clean:
 	${RM} $(OBJS)
 
 fclean: clean
-	${RM} $(NAME)
+	${RM} $(NAME) *.o
 
 re: fclean all
+
+.PHONY: all clean fclean re
