@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 18:09:14 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 19:23:27 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/16 17:57:28 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	dstsize2 = ft_strlen(dst);
 	srcsize = ft_strlen(src);
-	if (dstsize2 > dstsize)
+	if (dstsize2 > dstsize || dstsize == 0)
 		return (dstsize + srcsize);
 	j = ft_strlen(dst);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 15:41:12 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/13 18:26:51 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/16 17:53:27 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	if (n == 0)
-		return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
+		return (0);
 	else
 	{
 		while (s1[i] == s2[i] && i < n - 1)
