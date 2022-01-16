@@ -6,7 +6,7 @@
 /*   By: dridolfo <dridolfo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:03:24 by dridolfo          #+#    #+#             */
-/*   Updated: 2022/01/15 22:35:02 by dridolfo         ###   ########.fr       */
+/*   Updated: 2022/01/16 17:29:32 by dridolfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static t_list	*ft_looper(t_list *lst, void *(*f)(void *), void (*del)(void *),
 	t_list	*ptr;
 
 	ptr = new_n;
-	while (!lst)
+	while (lst)
 	{
 		new_n = ft_lstnew(f(lst->content));
 		if (!new_n)
@@ -37,7 +37,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_n;
 	t_list	*ptr;
-	t_list	*tmp;
 
 	if (!f || !lst)
 		return (NULL);
@@ -47,6 +46,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstclear(&lst, del);
 		return (NULL);
 	}
+	if (lst->next == NULL)
+		return (new_n);
 	lst = lst->next;
 	ptr = ft_looper(lst, f, del, new_n);
 	return (ptr);
