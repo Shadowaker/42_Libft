@@ -66,24 +66,27 @@ HDRS = libft.h
 
 RM = rm -f
 
-CC = gcc -Wall -Wextra -Werror
+CC     = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-.c.o = ${CC} -I ${HDRS} includes -c $< -o ${<:.c=.o}
+%.o: %.c $(HDRS)
+	$(CC) $(CFLAGS) -I . -c $< -o $@
 
 $(NAME): ${OBJS}
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-bonus: ${NAME} ${OBJB}
-	ar rc $(NAME) $(OBJB)
+bonus: $(OBJS) $(OBJB)
+	ar rc $(NAME) $(OBJS) $(OBJB)
+	ranlib $(NAME)
 
 all: $(NAME)
 
 clean:
-	${RM} $(OBJS)
+	${RM} $(OBJS) $(OBJB)
 
 fclean: clean
-	${RM} $(NAME) ${OBJB}
+	${RM} $(NAME)
 
 re: fclean all
 
